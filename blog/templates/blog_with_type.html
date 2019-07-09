@@ -1,0 +1,22 @@
+</head>
+<body>
+    <div>
+        <h2>{{ blog_type.type.name }}</h2>
+    </div>
+    <hr>
+    <h4>博客名:</h4>
+    {% for blog in blogs %}
+        <a href="{% url 'blog_detail' blog.pk %} ">
+        <h4>{{ blog.title }}</h4>
+        </a>
+        <h4>作者:{{ blog.author }}</h4>
+        <h4>内容:{{ blog.content|truncatewords:5|truncatechars:50 }}</h4>
+        <p>标签:{{ blog.blog_type }}</p>
+        <br>
+    {% empty %}
+        <p>--暂无博客--</p>
+    {% endfor %}
+    <hr>
+    <p>博客数: {{ blogs|length }}</p>
+</body>
+</html>
