@@ -6,13 +6,13 @@ from .models import Blog, BlogType
 def blog_list(request):
     blogs = Blog.objects.all()
     context = {'blogs': blogs}
-    return render_to_response('blog_list.html', context)
+    return render_to_response('blog/blog_list.html', context)
 
 
 def blog_detail(request, blog_pk):
     blog = get_object_or_404(Blog, pk=blog_pk)
     context = {'blog': blog}
-    return render_to_response('blog_detail.html', context)
+    return render_to_response('blog/blog_detail.html', context)
 
 
 def blog_with_type(request, blog_type_pk):
@@ -21,5 +21,5 @@ def blog_with_type(request, blog_type_pk):
     # 筛选blog_type为1的blogs,传入Blog对象与blog_type的值
     context = {'blogs': Blog.objects.filter(blog_type=blog_type),
                'blogs_type': blog_type}
-    return render_to_response('blog_with_type.html', context)
+    return render_to_response('blog/blog_with_type.html', context)
 

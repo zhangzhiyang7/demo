@@ -1,0 +1,21 @@
+body, h3{
+    margin: 0px;
+    padding: 0px;
+}
+div.top{
+    padding: 10px 10px;
+    font-size: x-large;
+    font-family: cursive;
+    background-color: darkseagreen;
+}
+div.nav {
+    background-color:darkgray;
+    border-bottom: 1px #ccc solid;
+}
+div.nav a{
+    padding: 10px 10px;
+    font-family: cursive;
+    display:inline-block;
+    color: black;
+    text-decoration: none;
+}

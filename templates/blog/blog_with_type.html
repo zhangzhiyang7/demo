@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>我的网站</title>
-</head>
-<body>
+{% extends 'base/base.html' %}
+
+{# 标题填充 #}
+{% block title %}
+    {{ blogs_type }}
+{% endblock %}
+
+{# 内容填充 #}
+{% block content %}
     <div>
-        <h2>个人博客网站</h2>
+        <h2>{{ blogs_type }}</h2>
     </div>
     <hr>
     <h4>博客名:</h4>
@@ -15,15 +17,12 @@
         <h4>{{ blog.title }}</h4>
         </a>
         <h4>作者:{{ blog.author }}</h4>
-        <h4>创建时间:{{ blog.created_time|date:"Y-m-d" }}</h4>
-        <h4>最后修改时间:{{ blog.last_updated_time|date:"Y-m-d" }}</h4>
         <h4>内容:{{ blog.content|truncatewords:5|truncatechars:50 }}</h4>
-        <p>标签:<a href="{% url 'blog_with_type' blog.blog_type.pk %}">{{ blog.blog_type }}</a></p>
+        <p>标签:{{ blog.blog_type }}</p>
         <br>
     {% empty %}
         <p>--暂无博客--</p>
     {% endfor %}
     <hr>
     <p>博客数: {{ blogs|length }}</p>
-</body>
-</html>
+{% endblock %}

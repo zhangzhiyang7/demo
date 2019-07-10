@@ -17,10 +17,10 @@ from .models import Article
 def article_detail(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     context = {'article_obj': article}
-    return render_to_response('article_detail.html', context)
+    return render_to_response('article/article_detail.html', context)
 
 
 def article_list(request):
     articles = Article.objects.filter(is_deleted=False)
     context = {'article_list': articles}
-    return render_to_response('article_list.html', context)
+    return render_to_response('article/article_list.html', context)

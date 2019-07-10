@@ -1,0 +1,9 @@
+h3.word{
+        font-size: 500%;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: cursive;
+    }

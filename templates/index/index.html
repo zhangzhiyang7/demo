@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+
+{# 标题填充 #}
+{% block title %}
+    博客首页
+{% endblock %}
+
+{# 内容填充 #}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <h3 class="word">欢迎查看我的博客。</h3>
+{% endblock %}
