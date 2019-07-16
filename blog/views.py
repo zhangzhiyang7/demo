@@ -5,7 +5,8 @@ from .models import Blog, BlogType
 
 def blog_list(request):
     blogs = Blog.objects.all()
-    context = {'blogs': blogs}
+    blog_types = BlogType.objects.all()
+    context = {'blogs': blogs, 'blog_types': blog_types}
     return render_to_response('blog/blog_list.html', context)
 
 
