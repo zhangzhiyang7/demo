@@ -6,8 +6,10 @@
     博客首页
 {% endblock %}
 
+{% block nav-home-active %}active{% endblock %}
+
 {# 内容填充 #}
 {% block content %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
-    <h3 class="word">欢迎查看我的博客。</h3>
+    <h3 class="word">欢迎查看我的博客</h3>
 {% endblock %}
