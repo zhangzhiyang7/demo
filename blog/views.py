@@ -17,10 +17,12 @@ def blog_detail(request, blog_pk):
 
 
 def blog_with_type(request, blog_type_pk):
+    blog_types = BlogType.objects.all()
     # 获取到匹配blog_type_pk的BlogType对象，此时例如blog_type = 1
     blog_type = get_object_or_404(BlogType, pk=blog_type_pk)
     # 筛选blog_type为1的blogs,传入Blog对象与blog_type的值
     context = {'blogs': Blog.objects.filter(blog_type=blog_type),
-               'blogs_type': blog_type}
+               'blogs_type': blog_type,
+               'blog_types': blog_types}
     return render_to_response('blog/blog_with_type.html', context)
 
